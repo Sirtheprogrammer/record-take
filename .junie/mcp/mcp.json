@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/usr/bin/php8.4",
+            "args": [
+                "/home/anonynoman/Desktop/record-take/artisan",
+                "boost:mcp"
+            ]
+        }
+    }
+}
