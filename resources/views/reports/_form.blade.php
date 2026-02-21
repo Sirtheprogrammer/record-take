@@ -156,8 +156,12 @@
     /* Employee Table */
     .emp-table-wrap {
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         margin-top: 0.75rem;
     }
+    .emp-table-wrap::-webkit-scrollbar { height: 4px; }
+    .emp-table-wrap::-webkit-scrollbar-track { background: transparent; }
+    .emp-table-wrap::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 2px; }
     .emp-table {
         width: 100%;
         border-collapse: collapse;
@@ -244,7 +248,10 @@
     @media (max-width: 640px) {
         .rpt-grid-2, .rpt-grid-3 { grid-template-columns: 1fr; }
         .rpt-actions { flex-direction: column; align-items: stretch; }
-        .btn-draft, .btn-submit-report { text-align: center; }
+        .btn-draft, .btn-submit-report { text-align: center; width: 100%; }
+        .rpt-section-body { padding: 1rem; }
+        .rpt-section-header { padding: 0.75rem 1rem; }
+        .toggle-group { max-width: 200px; }
     }
 </style>
 

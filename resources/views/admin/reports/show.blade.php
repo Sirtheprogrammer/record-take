@@ -33,7 +33,9 @@
         .badge-minor { background-color: rgba(251,191,36,0.1); color: #fbbf24; }
         .badge-critical { background-color: rgba(248,113,113,0.1); color: #f87171; }
         /* Employee table */
-        .emp-table-wrap { overflow-x: auto; }
+        .emp-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .emp-table-wrap::-webkit-scrollbar { height: 4px; }
+        .emp-table-wrap::-webkit-scrollbar-thumb { background: rgba(201,168,76,0.2); border-radius: 2px; }
         .emp-table { width: 100%; border-collapse: collapse; min-width: 700px; }
         .emp-table thead tr { background-color: #07111f; border-bottom: 1px solid rgba(201,168,76,0.15); }
         .emp-table th { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #6b7a99; padding: 0.65rem 0.85rem; text-align: left; white-space: nowrap; }
@@ -43,6 +45,9 @@
         .emp-empty { text-align: center; color: #4a5a72; font-size: 0.8rem; padding: 2rem; }
         @media (max-width: 640px) {
             .field-grid, .field-grid-2 { grid-template-columns: 1fr; }
+            .rpt-section-body { padding: 1rem; }
+            .rpt-section-header { padding: 0.75rem 1rem; }
+            .rpt-view { max-width: 100%; }
         }
     </style>
 

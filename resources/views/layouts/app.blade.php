@@ -261,12 +261,105 @@
             [data-theme="light"] .emp-empty { color: var(--muted); }
             [data-theme="light"] .pagination-wrap { border-top-color: var(--border-2); }
 
+            /* ── GLOBAL MOBILE TABLE RESPONSIVITY ── */
+            .table-scroll-wrap {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                border-radius: 8px;
+            }
+            .table-scroll-wrap::-webkit-scrollbar { height: 4px; }
+            .table-scroll-wrap::-webkit-scrollbar-track { background: transparent; }
+            .table-scroll-wrap::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+            /* Mobile card list — replaces table rows on small screens */
+            .mobile-card-list { display: none; }
+            .mobile-card {
+                background-color: var(--card-bg);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 1rem;
+                margin-bottom: 0.75rem;
+            }
+            .mobile-card-row {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                gap: 0.5rem;
+                margin-bottom: 0.5rem;
+            }
+            .mobile-card-row:last-child { margin-bottom: 0; }
+            .mobile-card-label {
+                font-size: 0.65rem;
+                font-weight: 600;
+                letter-spacing: 0.07em;
+                text-transform: uppercase;
+                color: var(--muted);
+                flex-shrink: 0;
+                min-width: 80px;
+            }
+            .mobile-card-value {
+                font-size: 0.82rem;
+                color: var(--txt-2);
+                text-align: right;
+                flex: 1;
+            }
+            .mobile-card-actions {
+                display: flex;
+                gap: 0.5rem;
+                margin-top: 0.75rem;
+                padding-top: 0.75rem;
+                border-top: 1px solid var(--border-2);
+                flex-wrap: wrap;
+            }
+            .mobile-card-actions a,
+            .mobile-card-actions button {
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-decoration: none;
+                padding: 0.4rem 0.85rem;
+                border-radius: 4px;
+                border: 1px solid var(--border);
+                color: var(--gold);
+                background: none;
+                cursor: pointer;
+                font-family: 'Inter', sans-serif;
+                transition: background-color 0.15s;
+            }
+            .mobile-card-actions a:hover,
+            .mobile-card-actions button:hover { background-color: var(--row-hover); }
+            .mobile-card-actions .btn-danger { color: #f87171; border-color: rgba(248,113,113,0.3); }
+
+            /* Filter bar mobile stacking */
             @media (max-width: 640px) {
                 .app-nav-links { display: none; }
                 .nav-mobile-toggle { display: block; }
                 .app-nav-user { display: none; }
                 .app-main { padding: 1.25rem 1rem; }
                 .page-header { padding: 0.85rem 1rem; }
+
+                /* Show mobile cards, hide desktop table */
+                .mobile-card-list { display: block; }
+                .desktop-table-wrap { display: none; }
+
+                /* Filter bar full-width stacking */
+                .filter-bar { flex-direction: column; }
+                .filter-group { min-width: 100% !important; }
+                .btn-filter, .btn-clear { width: 100%; text-align: center; }
+
+                /* Header action buttons stack */
+                .header-actions { flex-direction: column; width: 100%; }
+                .header-actions a, .header-actions button { width: 100%; text-align: center; }
+
+                /* Stat cards single column */
+                .dash-grid { grid-template-columns: 1fr !important; }
+
+                /* Form grids single column */
+                .rpt-grid-2, .rpt-grid-3, .field-grid, .field-grid-2 { grid-template-columns: 1fr !important; }
+            }
+
+            @media (min-width: 641px) and (max-width: 900px) {
+                .filter-bar { flex-wrap: wrap; }
+                .filter-group { min-width: 45%; }
             }
         </style>
         <script>
